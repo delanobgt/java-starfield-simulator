@@ -27,7 +27,7 @@ public class StarTrace {
     public void update() {
         if (!(-width/2 <= x && x <= width/2 && 
                 -height/2 <= y && y <= height/2)) {
-            r = Math.random()*Math.hypot(height, width)/3;
+            r = Math.random()*Math.hypot(height, width)/8 + (width/24);
             x = cosVal * r;
             y = sinVal * r;
             len = 1;

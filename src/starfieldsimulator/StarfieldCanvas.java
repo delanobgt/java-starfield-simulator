@@ -3,6 +3,7 @@ package starfieldsimulator;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
@@ -12,7 +13,7 @@ public class StarfieldCanvas extends JPanel {
     private int width;
     private int height;
     private Timer timer;
-    private final int DELAY = 10;
+    private final int DELAY = 5;
     private final int STAR_TRACE_COUNT = 50;
     private List<StarTrace> starTraceList = new ArrayList<>();
     
@@ -45,6 +46,7 @@ public class StarfieldCanvas extends JPanel {
     protected void paintComponent(Graphics oldG) {
 //        super.paintComponent(oldG);
         Graphics2D g = (Graphics2D) oldG;
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setColor(new Color(0, 0, 0, 20));
         g.fillRect(0, 0, width, height);
         g.translate(width/2, height/2);
